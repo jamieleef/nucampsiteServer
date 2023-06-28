@@ -90,7 +90,7 @@ favoriteRouter
                         favorite.campsites.push(req.params.campsiteId);
                         favorite.save().then((updatedFavorite) => {
                             res.setHeader("Content-Type", "application/json");
-                            res.sendStatus = 200;
+                            res.statusCode = 200;
                             res.json(updatedFavorite);
                         });
                     }
@@ -100,7 +100,8 @@ favoriteRouter
                         campsites: [req.params.campsiteId],
                     }).then((newFavorite) => {
                         res.setHeader("Content-Type", "application/json");
-                        res.status(200).json(newFavorite);
+                        res.statusCode = 200;
+                        res.json(newFavorite);
                     });
                 }
             })
